@@ -1,0 +1,28 @@
+@startuml 
+left to right direction
+
+actor Responsable
+actor Etudiant
+
+rectangle "Système de gestion de résidence" {
+  usecase "Enregistrer demande" as UC1
+  usecase "Attribuer chambre" as UC2
+  usecase "Vérifier disponibilité" as UC3
+  usecase "Enregistrer départ" as UC4
+  usecase "Consulter chambres" as UC5
+  usecase "Consulter historique" as UC6
+  usecase "Afficher statistiques" as UC7
+}
+
+Responsable --> UC1
+Responsable --> UC2
+Responsable --> UC4
+Responsable --> UC5
+Responsable --> UC6
+Responsable --> UC7
+Etudiant --> UC1
+Etudiant --> UC5
+UC2 ..> UC3 : <<include>>
+
+@enduml
+

@@ -1,0 +1,34 @@
+@startuml
+
+abstract class Employe {
+  # matricule : String
+  # nom : String
+  # prenom : String
+  # salaireBase : double
+  + calculerSalaire() : double
+  + afficherInformations() : void
+}
+
+class Enseignant {
+  - indemnite : double
+  + calculerSalaire() : double
+  + afficherInformations() : void
+}
+
+class AgentAdministratif {
+  - primeAdministration : double
+  + calculerSalaire() : double
+  + afficherInformations() : void
+}
+
+class Technicien {
+  - primeTechnique : double
+  + calculerSalaire() : double
+  + afficherInformations() : void
+}
+
+Employe <|-- Enseignant
+Employe <|-- AgentAdministratif
+Employe <|-- Technicien
+
+@enduml
